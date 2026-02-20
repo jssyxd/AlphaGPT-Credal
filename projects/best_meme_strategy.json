@@ -1,0 +1,31 @@
+{
+  "name": "meme_momentum_v1",
+  "description": "基于 FOMO 加速度和流动性健康度的策略",
+  "formula": [3, 1, 8],
+  "formula_readable": "fomo * liq_score",
+  "score": 0.72,
+  "created_at": "2024-02-20",
+  "factors": {
+    "0": "ret (对数收益)",
+    "1": "liq_score (流动性健康度)",
+    "2": "pressure (买卖压力)",
+    "3": "fomo (成交量加速度)",
+    "4": "dev (价格偏离)",
+    "5": "log_vol (对数成交量)"
+  },
+  "operators": {
+    "6": "ADD (+)",
+    "7": "SUB (-)",
+    "8": "MUL (×)",
+    "9": "DIV (÷)",
+    "10": "NEG (取负)",
+    "11": "ABS (绝对值)",
+    "12": "SIGN (符号)",
+    "13": "GATE (条件选择)",
+    "14": "JUMP (极端跳变)",
+    "15": "DECAY (衰减叠加)",
+    "16": "DELAY1 (滞后1期)",
+    "17": "MAX3 (3期最大)"
+  },
+  "logic": "当 fomo 加速度高且流动性健康度高时，信号为正。适合捕捉 meme 币的爆发初期。"
+}

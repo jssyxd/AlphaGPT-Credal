@@ -1,0 +1,13 @@
+{
+  "test_time": "2026-02-20T02:00:57.708933",
+  "env_file_created": true,
+  "modules": {
+    "credal_transformer": true,
+    "backtest_engine": true,
+    "risk_enhanced": true,
+    "paper_trader": true
+  },
+  "database_sql": true,
+  "deployment_doc": true,
+  "status": "ready_for_config"
+}

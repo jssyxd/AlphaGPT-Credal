@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  alphagpt-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alphagpt-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./best_meme_strategy.json:/app/best_meme_strategy.json:ro
+    environment:
+      - TZ=Asia/Tokyo
+    networks:
+      - alphagpt-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "print('healthy')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 可选：本地 Postgres（如果不用 Supabase）
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: alphagpt-postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: crypto_quant
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   networks:
+  #     - alphagpt-network
+
+networks:
+  alphagpt-network:
+    driver: bridge
+
+# volumes:
+#   postgres-data:

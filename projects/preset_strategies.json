@@ -1,0 +1,42 @@
+[
+  {
+    "name": "fomo_liq_momentum",
+    "description": "FOMO加速度 × 流动性健康度",
+    "formula": [3, 1, 8],
+    "formula_readable": "fomo * liq_score",
+    "score": 0.72,
+    "logic": "高FOMO + 高流动性 = 健康的上涨趋势"
+  },
+  {
+    "name": "pressure_momentum",
+    "description": "买卖压力 + FOMO",
+    "formula": [2, 3, 6],
+    "formula_readable": "pressure + fomo",
+    "score": 0.68,
+    "logic": "买入压力 + FOMO加速度 = 短期动量"
+  },
+  {
+    "name": "dev_reversal",
+    "description": "价格偏离反转策略",
+    "formula": [4, 10, 8],
+    "formula_readable": "dev * ABS",
+    "score": 0.65,
+    "logic": "价格偏离均值的绝对值"
+  },
+  {
+    "name": "volume_breakout",
+    "description": "成交量突破策略",
+    "formula": [5, 3, 8],
+    "formula_readable": "log_vol * fomo",
+    "score": 0.63,
+    "logic": "成交量放大 + FOMO = 突破信号"
+  },
+  {
+    "name": "liquidity_pressure",
+    "description": "流动性 + 买卖压力",
+    "formula": [1, 2, 8],
+    "formula_readable": "liq_score * pressure",
+    "score": 0.60,
+    "logic": "高流动性 + 正向压力 = 稳健上涨"
+  }
+]

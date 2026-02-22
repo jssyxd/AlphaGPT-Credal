@@ -1,8 +1,79 @@
+# Python
 *.log
 venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Environment
 .env
+.env.local
+.env.*.local
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Node
 node_modules/
+package-lock.json
+yarn.lock
+
+# Git
 .gitmodules
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing & Temporary
+test_*.py
+*_test.py
+*_spec.py
+test_report.json
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Data & Cache
+data/cache/
+data/temp/
+*.db
+*.sqlite
+*.sqlite3
+
+# Build & Dist
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Documentation Build
+docs/_build/
+site/
+
+# Paper Trading Logs
+paper_trades/
+trade_history/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Model Checkpoints
+checkpoints/
+models/*.pth
+models/*.pt
+
+# Large Files
+*.pdf
+*.zip
+*.tar.gz
+*.rar
